@@ -8,8 +8,7 @@ import ru.rewrite.sprig_jdbc.model.Book;
 
 public class JdbcRunner {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("");
-        //!!!need add xml config
+        ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
         BookDaoImpl bookDao = (BookDaoImpl) context.getBean("BookDao");
 
         bookDao.createBook("Clean code", 12.33, "Robert Martin", 22);
